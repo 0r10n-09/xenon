@@ -33,24 +33,35 @@ pub fn run_cli() -> Result<(), std::io::Error> {
 
         // Remove the newline character from the input
         let input = input.trim();
+        
+        let mut input_pieces = input.split_whitespace();
+
+        let command = input_pieces.next().unwrap_or("");
 
         // Execute the command
-        match input {
+        match command {
             "help" => {
                 println!("Available commands:");
                 println!("help      - Show this help message");
                 println!("shutdwn   - Shutdown xenonOS");
-                println!("clr       - Clear the screen");
+                println!("clear     - Clear the screen");
+                println!("echo      - Repeats a message exactly");
                 println!("sfetch    - Show xenonOS system info");
                 println!("socha     - The xenonOS file manager");
                 println!("credits   - Credits to the people who made XenonOS Possible");
             }
             "shutdwn" => {
-                println!("Goodbye!...");
-                break Ok(());
+                println!("Shutting down...");
+                std::process::exit(0);
             }
-            "clr" => {
+            "clear" => {
                 clear_screen();
+            }
+            "echo" => {
+                let text = input_pieces.collect::<Vec<&str>>().join(" ");
+                    
+                println!("{}", text);
+                io::stdout().flush().unwrap();
             }
             "sfetch" => {
                 sys.refresh_cpu(); // Ensure CPU info is updated before displaying
@@ -81,6 +92,7 @@ pub fn run_cli() -> Result<(), std::io::Error> {
                 println!("{}", "Xenon - Bought to you by the Xenon Group".purple());
                 println!("{}", "Built by Orion in his bedroom on 06/01/24".purple());
                 println!("{}", "Credit for the name 'Xenon' goes to 'Reminair', Thank you ^-^".purple());
+                println!("{}", "Credit to the IEEE for creating the POSIX standard.".purple());
                 println!("{}", "Thank you to everyone using Xenon without people using it, Xenon wouldn't exist!".purple().bold());
             }
             _ => {
