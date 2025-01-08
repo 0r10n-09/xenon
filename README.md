@@ -1,5 +1,6 @@
 # xenon
-Welcome to the TheManStudios' Xenon Github Page
+Welcome to the TheManStudios' Xenon Github Page.
+
 This is a modified version of the Xenon project from TXG (The Xenon Group) And Orion.
 ## What is xenon?
 
