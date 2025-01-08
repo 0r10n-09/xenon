@@ -1,6 +1,5 @@
 # xenon
-Welcome to TheManStudios' Xenon github page!
-This is a modification of the original Xenon project by Orion.
+Welcome to the official xenon github!
 ## What is xenon?
 
 Well it's sort of confusing, but i will try to keep it simple.
