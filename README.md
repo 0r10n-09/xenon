@@ -10,7 +10,7 @@ xenon Is what is described as a "placeboOS", it's a program that tries to act, b
 
 ## What are the features?
 
-Well its a pretty small list right now, but as me and my team learn rust, it will get more extensive as we go.
+Well its a pretty small list right now, but we promise to improve.
 
 ### Fakeboot:
 
