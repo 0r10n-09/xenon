@@ -8,7 +8,7 @@ use crossterm::{
     event,
     event::KeyCode
 };
-use crate::cli;
+use crate::clear;
 
 // File manager function
 pub fn run() -> io::Result<()> {
@@ -16,7 +16,7 @@ pub fn run() -> io::Result<()> {
 
     loop {
         // Clear the terminal
-        cli::clear();
+        clear();
 
         // Show the current directory
         println!("Current Directory: {}", current_dir.display());
